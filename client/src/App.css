@@ -1,6 +1,8 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  /* Modified */
+  margin-bottom: 50px;
 }
 
 a {
@@ -19,6 +21,10 @@ h4,
 h5,
 h6 {
   font-family: "Raleway", sans-serif;
+}
+
+.text-class {
+  color: rgb(241, 237, 237);
 }
 
 /*--------------------------------------------------------------
@@ -352,7 +358,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Hero Section OR THE LANDING PAGE
+#THE LANDING PAGE
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
@@ -699,156 +705,20 @@ section {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-#footer {
+.footer-custom {
+  position: fixed;
   background: #141611;
+  left: 0;
+  bottom: 0;
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
+  /* flex-shrink: 0; */
+  width: 100%;
 }
 
-#footer .footer-top {
-  background: #1c1f18;
-  padding: 60px 0 30px 0;
-}
-
-#footer .footer-top .footer-info {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-info h3 {
-  font-size: 26px;
-  margin: 0 0 10px 0;
-  padding: 2px 0 2px 0;
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: 3px;
-  color: #9fc658;
-}
-
-#footer .footer-top .footer-info p {
-  font-size: 14px;
-  line-height: 24px;
-  margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
-  color: #fff;
-}
-
-#footer .footer-top .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #3c4133;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-}
-
-#footer .footer-top .social-links a:hover {
-  background: #94c045;
-  color: #fff;
-  text-decoration: none;
-}
-
-#footer .footer-top h4 {
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-#footer .footer-top h4::before,
-#footer .footer-top h4::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-}
-
-#footer .footer-top h4::before {
-  right: 0;
-  background: #3c4133;
-}
-
-#footer .footer-top h4::after {
-  background: #94c045;
-  width: 60px;
-}
-
-#footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-links ul {
-  list-style: none;
-  padding: 5px 0 0 0;
-  margin: 0;
-}
-
-#footer .footer-top .footer-links ul li {
-  padding: 0 0 15px 0;
-}
-
-#footer .footer-top .footer-links ul a {
-  color: #fff;
-  transition: 0.3s;
-}
-
-#footer .footer-top .footer-links ul a:hover {
-  color: #94c045;
-}
-
-#footer .footer-top .footer-contact {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-contact p {
-  line-height: 26px;
-}
-
-#footer .footer-top .footer-newsletter {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-newsletter input[type="email"] {
-  border: 0;
-  padding: 6px 8px;
-  width: 65%;
-  border-radius: 4px 0 0 4px;
-}
-
-#footer .footer-top .footer-newsletter input[type="submit"] {
-  background: #94c045;
-  border: 0;
-  border-radius: 0 4px 4px 0;
-  width: 35%;
-  padding: 6px 0;
-  text-align: center;
-  color: #fff;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-#footer .footer-top .footer-newsletter input[type="submit"]:hover {
-  background: #789d35;
-}
-
-#footer .copyright {
+.copyright {
   text-align: center;
   padding-top: 30px;
   flex-shrink: 0;
-}
-
-#footer .credits {
-  padding-top: 10px;
-  text-align: center;
-  font-size: 13px;
-  color: #fff;
 }

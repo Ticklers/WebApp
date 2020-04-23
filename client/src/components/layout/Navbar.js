@@ -6,14 +6,13 @@ class Navbar extends Component {
     return (
       <header id="header" className="fixed-top">
         <div className="container d-flex">
-          {/* Logo */}
           <div className="logo mr-auto">
             {" "}
             <h1 className="text-light">
-              <a href="index.html">CoolName</a>
+              <Link to="/">CoolName</Link>
             </h1>
             {/* <a href="index.html">
-              <img src="assets/img/logo.png" alt="Logo" className="img-fluid" />
+              <img src="ImgURL" alt="Logo" className="img-fluid" />
             </a> */}
           </div>
 

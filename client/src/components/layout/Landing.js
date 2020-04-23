@@ -5,7 +5,7 @@ class Landing extends Component {
   render() {
     return (
       <section id="hero">
-        <div className="hero-container" data-aos="fade-up">
+        <div className="hero-container text-class" data-aos="fade-up">
           <h1>Welcome to Meme</h1>
           <h2>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam
