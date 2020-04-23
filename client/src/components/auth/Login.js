@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import classnames from "classnames";
+import { Link } from "react-router-dom";
 // import PropTypes from "prop-types";
 // import { connect } from "react-redux";
 // import { loginUser } from "../../actions/authActions";
+
+import "./Login.css";
 
 class Login extends Component {
   constructor() {
@@ -36,45 +39,81 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="login">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Log In</h1>
-              <p className="lead text-center">Log in to your account</p>
-              <form onSubmit={this.onSubmit}>
-                <div className="form-group">
-                  <input
-                    type="email"
-                    className={classnames("form-control form-control-lg", {
-                      "is-invalid": errors.email,
-                    })}
-                    placeholder="Email Address"
-                    name="email"
-                    value={this.state.email}
-                    onChange={this.onChange}
-                  />
-                  {errors.email && (
-                    <div className="invalid-feedback">{errors.email}</div>
-                  )}
+      <div className="back">
+        <div className="container border border-info p-2 bgi">
+          <div className="row no-gutter">
+            <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+            <div className="col-md-8 col-lg-6">
+              <div className="login d-flex align-items-center py-5">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-md-9 col-lg-8 mx-auto">
+                      <h3 className="login-heading mb-4">Welcome back!</h3>
+                      <form onSubmit={this.onSubmit}>
+                        <div className="form-label-group">
+                          <input
+                            type="email"
+                            id="inputEmail"
+                            className={classnames(
+                              "form-control form-control-lg",
+                              {
+                                "is-invalid": errors.email,
+                              }
+                            )}
+                            placeholder="Email address"
+                            name="email"
+                            required
+                            autofocus
+                            value={this.state.email}
+                            onChange={this.onChange}
+                          />
+                          {errors.email && (
+                            <div className="invalid-feedback">
+                              {errors.email}
+                            </div>
+                          )}
+                          <label for="inputEmail">Email address</label>
+                        </div>
+
+                        <div className="form-label-group">
+                          <input
+                            type="password"
+                            id="inputPassword"
+                            className={classnames(
+                              "form-control form-control-lg",
+                              {
+                                "is-invalid": errors.password,
+                              }
+                            )}
+                            placeholder="Password"
+                            name="password"
+                            required
+                            value={this.state.password}
+                            onChange={this.onChange}
+                          />
+                          {errors.password && (
+                            <div className="invalid-feedback">
+                              {errors.password}
+                            </div>
+                          )}
+                          <label for="inputPassword">Password</label>
+                        </div>
+                        <button
+                          className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                          type="submit"
+                        >
+                          Log in
+                        </button>
+                        <div className="mt-5 text-center">
+                          <Link className="small" to="/register">
+                            Don't have an account? Sign Up
+                          </Link>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
                 </div>
-                <div className="form-group">
-                  <input
-                    type="password"
-                    className={classnames("form-control form-control-lg", {
-                      "is-invalid": errors.password,
-                    })}
-                    placeholder="Password"
-                    name="password"
-                    value={this.state.password}
-                    onChange={this.onChange}
-                  />
-                  {errors.password && (
-                    <div className="invalid-feedback">{errors.password}</div>
-                  )}
-                </div>
-                <input type="submit" className="btn btn-info btn-block mt-4" />
-              </form>
+              </div>
             </div>
           </div>
         </div>
