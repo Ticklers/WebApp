@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import classnames from "classnames";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { registerUser } from "../../actions/authActions";
 
 import "./Register.css";
 
@@ -19,6 +22,22 @@ class Register extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/");
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.errors !== this.props.errors) {
+      this.setState({ errors: this.props.errors });
+    }
+  }
+
+  // componentWillReceiveProps(nextProps) {               //NO LTS. SOON TO BE REMOVED
+  //   if (nextProps.errors) this.setState({ errors: nextProps.errors });
+  // }
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -33,7 +52,7 @@ class Register extends Component {
       password2: this.state.password2,
     };
 
-    // this.props.registerUser(newUser, this.props.history);
+    this.props.registerUser(newUser, this.props.history);
   }
 
   render() {
@@ -145,4 +164,15 @@ class Register extends Component {
   }
 }
 
-export default Register;
+Register.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors,
+});
+
+export default connect(mapStateToProps, { registerUser })(withRouter(Register));
