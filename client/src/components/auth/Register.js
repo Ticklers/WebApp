@@ -82,12 +82,11 @@ class Register extends Component {
                       id="inputUserame"
                       value={this.state.name}
                       onChange={this.onChange}
-                      autofocus
                     />
                     {errors.name && (
                       <div className="invalid-feedback">{errors.name}</div>
                     )}
-                    <label for="inputUserame">Name</label>
+                    <label htmlFor="inputUserame">Name</label>
                   </div>
                   <div className="form-label-group">
                     <input
@@ -105,7 +104,7 @@ class Register extends Component {
                     {errors.email && (
                       <div className="invalid-feedback">{errors.email}</div>
                     )}
-                    <label for="inputEmail">Email address</label>
+                    <label htmlFor="inputEmail">Email address</label>
                   </div>
 
                   <div className="form-label-group">
@@ -124,7 +123,7 @@ class Register extends Component {
                     {errors.password && (
                       <div className="invalid-feedback">{errors.password}</div>
                     )}
-                    <label for="inputPassword">Password</label>
+                    <label htmlFor="inputPassword">Password</label>
                   </div>
 
                   <div className="form-label-group">
@@ -142,7 +141,9 @@ class Register extends Component {
                     {errors.password2 && (
                       <div className="invalid-feedback">{errors.password2}</div>
                     )}
-                    <label for="inputConfirmPassword">Confirm Password</label>
+                    <label htmlFor="inputConfirmPassword">
+                      Confirm Password
+                    </label>
                   </div>
 
                   <button

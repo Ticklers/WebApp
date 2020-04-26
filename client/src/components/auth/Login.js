@@ -54,8 +54,8 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container-fluid border border-info">
-        <div className="row no-gutter bg-light p-3 mt-3">
+      <div className="container-fluid new">
+        <div className="row no-gutter card-signin bg-white">
           <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
           <div className="col-md-8 col-lg-6">
             <div className="login d-flex align-items-center py-5">
@@ -82,7 +82,7 @@ class Login extends Component {
                         {errors.email && (
                           <div className="invalid-feedback">{errors.email}</div>
                         )}
-                        <label for="inputEmail">Email address</label>
+                        <label htmlFor="inputEmail">Email address</label>
                       </div>
 
                       <div className="form-label-group">
@@ -105,7 +105,7 @@ class Login extends Component {
                             {errors.password}
                           </div>
                         )}
-                        <label for="inputPassword">Password</label>
+                        <label htmlFor="inputPassword">Password</label>
                       </div>
                       <button
                         className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"

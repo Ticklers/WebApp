@@ -5,7 +5,20 @@
 
 .login,
 .image {
-  min-height: 100vh;
+  min-height: 70vh;
+}
+
+.new {
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+  width: 75%;
+}
+
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .bg-image {

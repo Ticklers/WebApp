@@ -5,9 +5,12 @@ import jwt_decode from "jwt-decode";
 import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 
 //Register user
+const url = "https://agile-anchorage-04188.herokuapp.com/api/users/register";
 export const registerUser = (userData, history) => (dispatch) => {
   axios
-    .post("/api/users/register", userData)
+    .post(url, {
+      userData,
+    })
     .then((res) => history.push("/login"))
     .catch((err) =>
       dispatch({
@@ -19,8 +22,9 @@ export const registerUser = (userData, history) => (dispatch) => {
 
 //Login - get user token
 export const loginUser = (userData) => (dispatch) => {
+  const url2 = "https://agile-anchorage-04188.herokuapp.com/api/users/login";
   axios
-    .post("./api/users/login", userData)
+    .post(url2, userData)
     .then((res) => {
       // Save to local storage
       const { token } = res.data;

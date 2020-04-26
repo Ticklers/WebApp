@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+// import $ from "jquery";
 
 class Navbar extends Component {
   onLogoutClick(e) {
@@ -14,50 +15,71 @@ class Navbar extends Component {
     const { isAuthenticated } = this.props.auth;
 
     const authLinks = (
-      <ul className="ml-auto">
-        <li className="get-started">
-          <Link to="/login">Logout</Link>
+      <ul className="navbar-nav text-uppercase ml-auto">
+        <li className="nav-item">
+          <Link className="nav-link js-scroll-trigger" to="/dummylink">
+            Dummy
+          </Link>
+        </li>
+        <li className="nav-item get-started">
+          <Link className="nav-link js-scroll-trigger" to="/login">
+            Log Out
+          </Link>
         </li>
       </ul>
     );
 
     const guestLinks = (
-      <ul className="ml-auto" >
-        <li className="get-started">
-          <Link to="/login">Log In</Link>
+      <ul className="navbar-nav text-uppercase ml-auto">
+        <li className="nav-item get-started">
+          <Link className="nav-link js-scroll-trigger" to="/login">
+            Log In
+          </Link>
         </li>
-        <li className="get-started">
-          <Link to="/register">Sign Up</Link>
+        <li className="nav-item get-started">
+          <Link className="nav-link js-scroll-trigger" to="/register">
+            Sign Up
+          </Link>
         </li>
       </ul>
     );
 
     return (
-      <header id="header" className="fixed-top">
-        <div className="container d-flex">
-          <div className="logo mr-auto">
-            {" "}
-            <h1 className="text-light">
-              <Link to="/">CoolName</Link>
-            </h1>
-            {/* FOR IMG LOGO <a href="index.html">
-              <img src="ImgURL" alt="Logo" className="img-fluid" />
-            </a> */}
-          </div>
-
-          <nav className="nav-menu d-none d-lg-block">
-            <ul className="ml-auto">
-              <li className="active">
-                <Link to="/">Home</Link>
-              </li>
-              <li className="active">
-                <Link to="/">Dummy</Link>
-              </li>
-            </ul>
+      <nav
+        className="navbar navbar-expand-lg navbar-dark fixed-top"
+        id="mainNav"
+      >
+        <div className="container">
+          <Link className="navbar-brand js-scroll-trigger" to="/">
+            <h2 className="text-light">CoolName</h2>
+          </Link>
+          <button
+            className="navbar-toggler navbar-toggler-right"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            Menu<i className="fas fa-bars ml-1"></i>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarResponsive"></div>
+          <ul className="navbar-nav text-uppercase ml-auto">
+            <li className="nav-item">
+              <Link className="nav-link js-scroll-trigger" to="/">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link js-scroll-trigger" href="#about">
+                About
+              </a>
+            </li>
             {isAuthenticated ? authLinks : guestLinks}
-          </nav>
+          </ul>
         </div>
-      </header>
+      </nav>
     );
   }
 }

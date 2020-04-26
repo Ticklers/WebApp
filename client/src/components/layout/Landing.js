@@ -10,27 +10,32 @@ class Landing extends Component {
 
   render() {
     return (
-      <section id="hero">
-        <div className="hero-container text-class" data-aos="fade-up">
-          <h1>Welcome to Meme</h1>
-          <h2>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam
-            tempore nihil provident explicabo, odio sunt cumque saepe ad!
-            Placeat nostrum in commodi animi. Saepe sint minima minus fugit enim
-            tempore!
-          </h2>
-          <h4>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-            culpa deserunt fuga cupiditate numquam recusandae ipsam atque eum
-            beatae ratione ab consequuntur totam, alias tenetur nihil in
-            doloremque ipsa dignissimos.
-          </h4>
-          <h6>Different fonts to be used above</h6>
-          <Link to="" className="btn-get-started scrollto">
-            Get Started
+      <header className="masthead">
+        <div className="container">
+          <div className="masthead-subheading">Welcome To New Site!</div>
+          <div className="masthead-heading text-uppercase">
+            It's Nice To Meet You
+          </div>
+          <div className="masthead-subheading">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex deserunt
+            in et vero corrupti numquam laborum iste consequuntur! Cum possimus
+            numquam quae commodi aliquid natus temporibus velit quisquam
+            consequatur a?
+          </div>
+          <h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui et cum
+            totam necessitatibus dicta nulla. Deleniti omnis pariatur, eveniet
+            fugit fugiat saepe facilis molestias ipsa laboriosam libero
+            similique voluptate earum?
+          </h3>
+          <Link
+            className="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
+            to="/register"
+          >
+            Get Started Here
           </Link>
         </div>
-      </section>
+      </header>
     );
   }
 }
