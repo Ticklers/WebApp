@@ -6,16 +6,10 @@ import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 
 //Register user
 
-/*const api = axios.create({
-  
-  baseURL: `https://agile-anchorage-04188.herokuapp.com/api/users`
-});*/
-
 export const registerUser = (userData, history) => (dispatch) => {
   const url = "http://agile-anchorage-04188.herokuapp.com/api/users/register";
-  axios.post(url, 
-      userData,
-    )
+  axios
+    .post(url, userData)
     .then((res) => history.push("/login"))
     .catch((err) =>
       dispatch({
@@ -27,8 +21,9 @@ export const registerUser = (userData, history) => (dispatch) => {
 
 //Login - get user token
 export const loginUser = (userData) => (dispatch) => {
-  const url2 = "https://agile-anchorage-04188.herokuapp.com/api/users/login";
-  axios.post(url2, userData)
+  const url = "https://agile-anchorage-04188.herokuapp.com/api/users/login";
+  axios
+    .post(url, userData)
     .then((res) => {
       // Save to local storage
       const { token } = res.data;

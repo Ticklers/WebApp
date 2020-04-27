@@ -3,9 +3,20 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-// import $ from "jquery";
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menu: false,
+    };
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+
+  toggleMenu() {
+    this.setState({ menu: !this.state.menu });
+  }
+
   onLogoutClick(e) {
     e.preventDefault();
     this.props.logoutUser();
@@ -13,18 +24,21 @@ class Navbar extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
+    const navMenu = this.state.menu ? "navMenu" : " ";
 
     const authLinks = (
-      <ul className="navbar-nav text-uppercase ml-auto">
-        <li className="nav-item">
+      <ul className="navbar-nav left text-uppercase ml-auto">
+        <li className="nav-item menuclass">
           <Link className="nav-link js-scroll-trigger" to="/dummylink">
             Dummy
           </Link>
         </li>
         <li className="nav-item get-started">
-          <Link className="nav-link js-scroll-trigger" to="/" 
-          onClick={this.onLogoutClick.bind(this)}
->
+          <Link
+            className="nav-link js-scroll-trigger"
+            to="/login"
+            onClick={this.onLogoutClick.bind(this)}
+          >
             Log Out
           </Link>
         </li>
@@ -34,12 +48,20 @@ class Navbar extends Component {
     const guestLinks = (
       <ul className="navbar-nav text-uppercase ml-auto">
         <li className="nav-item get-started">
-          <Link className="nav-link js-scroll-trigger" to="/login">
+          <Link
+            className="nav-link js-scroll-trigger"
+            to="/login"
+            onClick={this.toggleMenu}
+          >
             Log In
           </Link>
         </li>
         <li className="nav-item get-started">
-          <Link className="nav-link js-scroll-trigger" to="/register">
+          <Link
+            className="nav-link js-scroll-trigger"
+            to="/register"
+            onClick={this.toggleMenu}
+          >
             Sign Up
           </Link>
         </li>
@@ -48,7 +70,7 @@ class Navbar extends Component {
 
     return (
       <nav
-        className="navbar navbar-expand-lg navbar-dark fixed-top"
+        className="navbar navbar-expand-lg color navbar-dark fixed-top"
         id="mainNav"
       >
         <div className="container">
@@ -66,20 +88,32 @@ class Navbar extends Component {
           >
             Menu<i className="fas fa-bars ml-1"></i>
           </button>
-          <div className="collapse navbar-collapse" id="navbarResponsive"></div>
-          <ul className="navbar-nav text-uppercase ml-auto">
-            <li className="nav-item">
-              <Link className="nav-link js-scroll-trigger" to="/">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#about">
-                About
-              </a>
-            </li>
+          <div
+            className={"collapse navbar-collapse " + navMenu}
+            id="navbarResponsive"
+          >
+            <ul className="navbar-nav text-uppercase ml-3">
+              <li className="nav-item">
+                <Link
+                  className="nav-link js-scroll-trigger"
+                  to="/"
+                  onClick={this.toggleMenu}
+                >
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link js-scroll-trigger"
+                  href="#about"
+                  onClick={this.toggleMenu}
+                >
+                  About
+                </a>
+              </li>
+            </ul>
             {isAuthenticated ? authLinks : guestLinks}
-          </ul>
+          </div>
         </div>
       </nav>
     );
