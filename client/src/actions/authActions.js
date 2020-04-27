@@ -7,9 +7,10 @@ import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 //Register user
 
 export const registerUser = (userData, history) => (dispatch) => {
-  const url = "http://agile-anchorage-04188.herokuapp.com/api/users/register";
-  axios
-    .post(url, userData)
+  const url = "https://agile-anchorage-04188.herokuapp.com/api/users/register";
+  axios.post(url, 
+      userData,
+    )
     .then((res) => history.push("/login"))
     .catch((err) =>
       dispatch({

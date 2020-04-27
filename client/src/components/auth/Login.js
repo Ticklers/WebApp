@@ -32,7 +32,7 @@ class Login extends Component {
       this.props.history.push("/");
     }
     if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
+      this.setState({ errors: nextProps.errors.errors });
     }
   }
 
