@@ -5,12 +5,17 @@ import jwt_decode from "jwt-decode";
 import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 
 //Register user
-const url = "https://agile-anchorage-04188.herokuapp.com/api/users/register";
+
+/*const api = axios.create({
+  
+  baseURL: `https://agile-anchorage-04188.herokuapp.com/api/users`
+});*/
+
 export const registerUser = (userData, history) => (dispatch) => {
-  axios
-    .post(url, {
+  const url = "http://agile-anchorage-04188.herokuapp.com/api/users/register";
+  axios.post(url, 
       userData,
-    })
+    )
     .then((res) => history.push("/login"))
     .catch((err) =>
       dispatch({
@@ -23,8 +28,7 @@ export const registerUser = (userData, history) => (dispatch) => {
 //Login - get user token
 export const loginUser = (userData) => (dispatch) => {
   const url2 = "https://agile-anchorage-04188.herokuapp.com/api/users/login";
-  axios
-    .post(url2, userData)
+  axios.post(url2, userData)
     .then((res) => {
       // Save to local storage
       const { token } = res.data;
@@ -32,7 +36,7 @@ export const loginUser = (userData) => (dispatch) => {
       localStorage.setItem("jwtToken", token);
       // Set token to auth header
       setAuthToken(token);
-      // Decode token
+      // Dode token
       const decoded = jwt_decode(token);
       // Set current user
       dispatch(setCurrentUser(decoded));
