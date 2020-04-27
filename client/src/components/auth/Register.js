@@ -16,7 +16,7 @@ class Register extends Component {
       username:"",
       password: "",
       confirmPassword: "",
-      errors: {},
+      errors: {}
     };
 
     this.onChange = this.onChange.bind(this);
@@ -31,7 +31,7 @@ class Register extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.errors !== this.props.errors) {
-      this.setState({ errors: this.props.errors });
+      this.setState({ errors: this.props.errors.errors });
     }
   }
 
@@ -52,6 +52,7 @@ class Register extends Component {
       password: this.state.password,
       confirmPassword: this.state.confirmPassword,
       username:this.state.username,
+
     };
 
     this.props.registerUser(newUser, this.props.history);
@@ -59,10 +60,13 @@ class Register extends Component {
 
   render() {
     const { errors } = this.state;
+    
+  
+    
 
     return (
       <div className="bg my-5 py-5">
-
+      
         <div className="row">
           <div className="col-lg-10 col-xl-9 mx-auto">
             <div className="card card-signin flex-row my-5">
@@ -85,7 +89,11 @@ class Register extends Component {
                       id="inputUserame"
                       value={this.state.name}
                       onChange={this.onChange}
+                      autoFocus
                     />
+                 
+                
+                  
                     {errors.name && (
                       <div className="invalid-feedback">{errors.name}</div>
                     )}
@@ -110,7 +118,7 @@ class Register extends Component {
                   {errors.username && (
                     <div className="invalid-feedback">{errors.username}</div>
                   )}
-                  <label htmlFor="inputUsername">Username</label>
+                  <label for="inputUsername">Username</label>
                   </div>
 
                   <div className="form-label-group">
@@ -186,6 +194,7 @@ class Register extends Component {
           </div>
         </div>
       </div>
+      
       
     );
   }

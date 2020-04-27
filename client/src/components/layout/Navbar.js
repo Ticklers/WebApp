@@ -34,12 +34,12 @@ class Navbar extends Component {
     const guestLinks = (
       <ul className="navbar-nav text-uppercase ml-auto">
         <li className="nav-item get-started">
-          <Link className="nav-link js-scroll-trigger" to="/login">
+          <Link className=" nav-link  js-scroll-trigger" to="/login">
             Log In
           </Link>
         </li>
         <li className="nav-item get-started">
-          <Link className="nav-link js-scroll-trigger" to="/register">
+          <Link className="  nav-link  js-scroll-trigger" to="/register">
             Sign Up
           </Link>
         </li>
