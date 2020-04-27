@@ -22,7 +22,9 @@ class Navbar extends Component {
           </Link>
         </li>
         <li className="nav-item get-started">
-          <Link className="nav-link js-scroll-trigger" to="/login">
+          <Link className="nav-link js-scroll-trigger" to="/" 
+          onClick={this.onLogoutClick.bind(this)}
+>
             Log Out
           </Link>
         </li>
