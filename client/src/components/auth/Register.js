@@ -63,11 +63,11 @@ class Register extends Component {
     return (
       <div className="bg my-5 py-5">
         <div className="row">
-          <div className="col-lg-10 col-xl-9 mx-auto">
+          <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div className="card card-signin flex-row my-5">
-              <div className="card-img-left d-none d-md-flex"></div>
               <div className="card-body">
-                <h5 className="card-title text-center">Register</h5>
+                <h5 className="card-title text-center">Create An Account</h5>
+                <hr />
                 <form
                   noValidate
                   onSubmit={this.onSubmit}
@@ -102,7 +102,6 @@ class Register extends Component {
                         "is-invalid": errors.username,
                       })}
                       placeholder="Username"
-                      required
                       value={this.state.username}
                       onChange={this.onChange}
                     />
@@ -121,7 +120,6 @@ class Register extends Component {
                         "is-invalid": errors.email,
                       })}
                       placeholder="Email address"
-                      required
                       value={this.state.email}
                       onChange={this.onChange}
                     />
@@ -140,7 +138,6 @@ class Register extends Component {
                       })}
                       name="password"
                       placeholder="Password"
-                      required
                       value={this.state.password}
                       onChange={this.onChange}
                     />
@@ -171,12 +168,12 @@ class Register extends Component {
                       Confirm Password
                     </label>
                   </div>
-
+                  <hr />
                   <button
                     className="btn btn-lg btn-primary btn-block text-uppercase"
                     type="submit"
                   >
-                    Register
+                    Sign Up
                   </button>
                   <Link className="d-block text-center mt-2 small" to="/login">
                     Already have an account? Log in
