@@ -13,10 +13,10 @@ class Register extends Component {
     this.state = {
       name: "",
       email: "",
-      username:"",
+      username: "",
       password: "",
       confirmPassword: "",
-      errors: {}
+      errors: {},
     };
 
     this.onChange = this.onChange.bind(this);
@@ -35,9 +35,9 @@ class Register extends Component {
     }
   }
 
-   //componentWillReceiveProps(nextProps) {               //NO LTS. SOON TO BE REMOVED
-     //if (nextProps.errors) this.setState({ errors: nextProps.errors });
-   //}
+  //componentWillReceiveProps(nextProps) {               //NO LTS. SOON TO BE REMOVED
+  //if (nextProps.errors) this.setState({ errors: nextProps.errors });
+  //}
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
@@ -51,8 +51,7 @@ class Register extends Component {
       email: this.state.email,
       password: this.state.password,
       confirmPassword: this.state.confirmPassword,
-      username:this.state.username,
-
+      username: this.state.username,
     };
 
     this.props.registerUser(newUser, this.props.history);
@@ -60,13 +59,9 @@ class Register extends Component {
 
   render() {
     const { errors } = this.state;
-    
-  
-    
 
     return (
       <div className="bg my-5 py-5">
-      
         <div className="row">
           <div className="col-lg-10 col-xl-9 mx-auto">
             <div className="card card-signin flex-row my-5">
@@ -82,7 +77,7 @@ class Register extends Component {
                     <input
                       type="text"
                       className={classnames("form-control", {
-                        "is-invalid": errors.name
+                        "is-invalid": errors.name,
                       })}
                       placeholder="Name"
                       name="name"
@@ -91,34 +86,30 @@ class Register extends Component {
                       onChange={this.onChange}
                       autoFocus
                     />
-                 
-                
-                  
+
                     {errors.name && (
                       <div className="invalid-feedback">{errors.name}</div>
                     )}
-                   <label htmlFor="inputUserame">Name</label>
-                    </div>
-                    
-                  <div className="form-label-group">
-                  <input
-                    type="text"
-                    id="inputUsername"
-                    name="username"
-                    className={classnames("form-control form-control-lg", {
-                      "is-invalid": errors.username,
-                    })}
-                    placeholder="Username"
-                    required
-                    value={this.state.username}
-                    onChange={this.onChange}
-                  
+                    <label htmlFor="inputUserame">Name</label>
+                  </div>
 
-                  />
-                  {errors.username && (
-                    <div className="invalid-feedback">{errors.username}</div>
-                  )}
-                  <label for="inputUsername">Username</label>
+                  <div className="form-label-group">
+                    <input
+                      type="text"
+                      id="inputUsername"
+                      name="username"
+                      className={classnames("form-control form-control-lg", {
+                        "is-invalid": errors.username,
+                      })}
+                      placeholder="Username"
+                      required
+                      value={this.state.username}
+                      onChange={this.onChange}
+                    />
+                    {errors.username && (
+                      <div className="invalid-feedback">{errors.username}</div>
+                    )}
+                    <label htmlFor="inputUsername">Username</label>
                   </div>
 
                   <div className="form-label-group">
@@ -172,7 +163,9 @@ class Register extends Component {
                       onChange={this.onChange}
                     />
                     {errors.confirmPassword && (
-                      <div className="invalid-feedback">{errors.confirmPassword}</div>
+                      <div className="invalid-feedback">
+                        {errors.confirmPassword}
+                      </div>
                     )}
                     <label htmlFor="inputConfirmPassword">
                       Confirm Password
@@ -194,8 +187,6 @@ class Register extends Component {
           </div>
         </div>
       </div>
-      
-      
     );
   }
 }
@@ -208,7 +199,7 @@ Register.propTypes = {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  errors: state.errors
+  errors: state.errors,
 });
 
 export default connect(mapStateToProps, { registerUser })(withRouter(Register));

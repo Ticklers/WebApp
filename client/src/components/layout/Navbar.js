@@ -29,7 +29,11 @@ class Navbar extends Component {
     const authLinks = (
       <ul className="navbar-nav left text-uppercase ml-auto">
         <li className="nav-item menuclass">
-          <Link className="nav-link js-scroll-trigger" to="/dummylink">
+          <Link
+            className="nav-link js-scroll-trigger"
+            onClick={this.toggleMenu}
+            to="/dummylink"
+          >
             Dummy
           </Link>
         </li>
@@ -74,7 +78,11 @@ class Navbar extends Component {
         id="mainNav"
       >
         <div className="container">
-          <Link className="navbar-brand js-scroll-trigger" to="/">
+          <Link
+            className="navbar-brand js-scroll-trigger"
+            onClick={this.toggleMenu}
+            to="/"
+          >
             <h2 className="text-light">CoolName</h2>
           </Link>
           <button

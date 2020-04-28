@@ -4376,7 +4376,7 @@ input[type="button"].btn-block {
   height: 13vh !important;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 991px) {
   .get-started {
     width: 12%;
     padding-top: 3px;
