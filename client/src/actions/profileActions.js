@@ -10,7 +10,7 @@ import {
 // Get current profile
 export const getCurrentProfile = () => dispatch => {
   dispatch(setProfileLoading());
-  const url = "https://agile-anchorage-04188.herokuapp.com/api/users/register";
+  const url = "https://agile-anchorage-04188.herokuapp.com/api/users/";
   axios
     .get(url)
     .then(res =>
@@ -29,8 +29,9 @@ export const getCurrentProfile = () => dispatch => {
 
 // Create Profile
 export const createProfile = (profileData, history) => dispatch => {
+    const url2 = "https://agile-anchorage-04188.herokuapp.com/api/users/";
   axios
-    .post('/api/profile', profileData)
+    .post(url2, profileData)
     .then(res => history.push('/dashboard'))
     .catch(err =>
       dispatch({
