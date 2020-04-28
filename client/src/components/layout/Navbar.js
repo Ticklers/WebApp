@@ -74,7 +74,7 @@ class Navbar extends Component {
 
     return (
       <nav
-        className="navbar navbar-expand-lg color navbar-dark fixed-top"
+        className="navbar navbar-expand-lg navbar-dark fixed-top"
         id="mainNav"
       >
         <div className="container">
@@ -94,7 +94,8 @@ class Navbar extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            Menu<i className="fas fa-bars ml-1"></i>
+            <span className="navbar-toggler-icon"></span>
+            {/* Menu<i className="fas fa-bars ml-1"></i> */}
           </button>
           <div
             className={"collapse navbar-collapse " + navMenu}

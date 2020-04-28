@@ -4,28 +4,23 @@
 }
 
 body {
-  background: linear-gradient(to right, #0062e6, #33aeff);
+  background: url("../../img/rickwindows.jpg") no-repeat;
+  position: relative;
+  background-size: cover;
+  background-position: center;
 }
 
 .card-signin {
   border: 0;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .card-signin .card-title {
   margin-bottom: 2rem;
   font-weight: 300;
   font-size: 1.5rem;
-}
-
-.card-signin .card-img-left {
-  width: 45%;
-  /* Link to your background image using in the property below! */
-  background: scroll center
-    url("https://cdn.shopify.com/s/files/1/1000/8436/products/zapbeacg68_13b8948e-f6b2-4a57-8880-f7713636c966_711x.jpg?v=1530563652");
-  background-size: cover;
 }
 
 .card-signin .card-body {
@@ -107,6 +102,7 @@ body {
   color: #777;
 }
 
+/* To add login with sites in future */
 .btn-google {
   color: white;
   background-color: #ea4335;
@@ -115,4 +111,28 @@ body {
 .btn-facebook {
   color: white;
   background-color: #3b5998;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+
+@supports (-ms-ime-align: auto) {
+  .form-label-group > label {
+    display: none;
+  }
+  .form-label-group input::-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .form-label-group > label {
+    display: none;
+  }
+  .form-label-group input:-ms-input-placeholder {
+    color: #777;
+  }
 }
