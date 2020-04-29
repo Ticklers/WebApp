@@ -12,6 +12,7 @@ import "./App.css";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
+import ScrollToTop from "./components/layout/ScrollToTop";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Profile from "./components/Main/Profile"
@@ -42,6 +43,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
+          <ScrollToTop />
           <div className="App">
             <Navbar />
             <Route exact path="/" component={Landing} />
