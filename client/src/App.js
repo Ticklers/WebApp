@@ -16,6 +16,10 @@ import ScrollToTop from "./components/layout/ScrollToTop";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Profile from "./components/Main/Profile"
+import AddPhoto from "./components/Main/AddPhoto";
+import Profile1 from "./components/Main/Profile1"
+
+
 
 // To check if user is logged in already
 
@@ -52,6 +56,8 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Switch>
                 <PrivateRoute exact path="/profile" component={Profile} />
+               <PrivateRoute  path="/AddPhoto" component={Profile1}/>
+                 
               </Switch>
             
 
