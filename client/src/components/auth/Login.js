@@ -20,21 +20,24 @@ class Login extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  //TODO: add top
-  componentDidMount() {
+  componentDidUpdate(prevProps) {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/");
     }
+    if (prevProps.errors !== this.props.errors) {
+      this.setState({ errors: this.props.errors.errors });
+    }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/");
-    }
-    if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors.errors });
-    }
-  }
+  //  No LTS
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.auth.isAuthenticated) {
+  //     this.props.history.push("/");
+  //   }
+  //   if (nextProps.errors) {
+  //     this.setState({ errors: nextProps.errors.errors });
+  //   }
+  // }
 
   onSubmit(event) {
     event.preventDefault();
@@ -43,7 +46,6 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-
     this.props.loginUser(userData);
   }
 
