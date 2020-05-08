@@ -133,17 +133,17 @@
 }
 
 .uno header {
-  background-image: url("../../img/cardRJ.jpeg");
-  background-size: cover;
-}
-
-.dos header {
   background-image: url("../../img/cardDummy.png");
   background-size: cover;
 }
 
+.dos header {
+  background-image: url("../../img/background2.jpg");
+  background-size: cover;
+}
+
 .tres header {
-  background-image: url("../../img/cardRJ.jpeg");
+  background-image: url("../../img/cardDummy.png");
   background-size: cover;
 }
 
