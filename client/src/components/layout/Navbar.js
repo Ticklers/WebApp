@@ -84,7 +84,7 @@ class Navbar extends Component {
             onClick={this.toggleMenu}
             to="/"
           >
-            <h2 className="text-light">CoolName</h2>
+            <h2 className="text-light">Tickle</h2>
           </Link>
           <button
             className="navbar-toggler navbar-toggler-right"
