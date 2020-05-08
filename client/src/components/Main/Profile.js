@@ -43,7 +43,9 @@ class Profile extends Component {
                   <strong className="count">0</strong> following
                 </li>
               </ul>
-              {/*  <h4><strong>Han Solo</strong> Smuggler & Gambler</h4>*/}
+              <h4>
+                <strong>Han Solo</strong> Smuggler & Gambler
+              </h4>
               <ul className="bio-ul m-t-1">
                 <li className="info">{user.name}</li>
                 <li className="m-t-0">A champ</li>
