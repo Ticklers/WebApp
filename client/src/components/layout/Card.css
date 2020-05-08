@@ -1,0 +1,166 @@
+.wrapper {
+  margin: 0 auto 100px auto;
+  max-width: 1200px;
+}
+
+.stage {
+  list-style: none;
+  padding: 0;
+}
+.scene {
+  width: 260px;
+  height: 500px;
+  margin: 30px 50px;
+  float: left;
+  perspective: 1000px;
+}
+.movie {
+  width: 260px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transform: translateZ(-130px);
+  transition: transform 350ms;
+}
+.movie:hover {
+  transform: rotateY(-78deg) translateZ(20px);
+}
+
+.poster {
+  border-radius: 8px;
+}
+
+.movie .poster,
+.movie .info {
+  position: absolute;
+  width: 260px;
+  height: 500px;
+  background-color: #fff;
+  backface-visibility: hidden;
+}
+.movie .poster {
+  transform: translateZ(130px);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.movie .info {
+  transform: rotateY(90deg) translateZ(130px);
+  border: 1px solid #b8b5b5;
+  font-size: 0.75em;
+}
+
+/* Removed box-Shadow effect. To be included if a background img is not used */
+/* .movie::after {
+  content: "";
+  width: 260px;
+  height: 260px;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+  transform-origin: 100% 100%;
+  transform: rotateX(90deg) translateY(130px);
+  transition: box-shadow 350ms;
+} 
+.movie:hover::after {
+  box-shadow: 20px -5px 50px rgba(0, 0, 0, 0.3);
+} */
+
+/* Text styling */
+.info header {
+  color: #fff;
+  padding: 7px 10px;
+  font-weight: bold;
+  height: 195px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+}
+
+.info header h1 {
+  margin: 0 0 2px;
+  font-size: 1.4em;
+}
+
+.info header .rating {
+  border: 1px solid #fff;
+  padding: 0px 3px;
+}
+
+.info p {
+  padding: 2em 1.4em;
+  /* margin: 2px 0 0; */
+  font-weight: 700;
+  color: #666;
+  line-height: 1.4em;
+  border-top: 5px solid #555;
+}
+
+.movie .poster,
+.movie .info,
+.movie .info header {
+  -webkit-transition: box-shadow 350ms;
+  -moz-transition: box-shadow 350ms;
+  transition: box-shadow 350ms;
+}
+.movie .poster {
+  box-shadow: inset 0px 0px 40px rgba(255, 255, 255, 0);
+}
+
+.movie:hover .poster {
+  box-shadow: inset 300px 0px 40px rgba(255, 255, 255, 0.8);
+}
+
+.movie .info,
+.movie .info header {
+  box-shadow: inset -300px 0px 40px rgba(0, 0, 0, 0.1);
+}
+
+.movie:hover .info,
+.movie:hover .info header {
+  box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0);
+}
+
+.first .poster {
+  background-image: url("../../img/card1.jpeg");
+}
+
+.second .poster {
+  background-image: url("../../img/card2.jpeg");
+}
+
+.third .poster {
+  background-image: url("../../img/card3.jpeg");
+}
+
+.uno header {
+  background-image: url("../../img/cardRJ.jpeg");
+  background-size: cover;
+}
+
+.dos header {
+  background-image: url("../../img/cardDummy.png");
+  background-size: cover;
+}
+
+.tres header {
+  background-image: url("../../img/cardRJ.jpeg");
+  background-size: cover;
+}
+
+/*
+  Fallback
+  */
+.no-csstransforms3d .movie .poster,
+.no-csstransforms3d .movie .info {
+  position: relative;
+}
+
+/*
+  Media Queries
+  */
+@media screen and (max-width: 1199px) {
+  .scene {
+    float: none;
+    margin: 30px auto 60px;
+  }
+}
