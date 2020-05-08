@@ -10,9 +10,7 @@ import rick from "../../img/rick.png";
 
 
 class Profile extends Component {
-  componentDidMount() {
-    this.props.getCurrentProfile();
-  }
+  
   render() {
     const { user } = this.props.auth;
 
@@ -33,7 +31,7 @@ class Profile extends Component {
             </div>
             <div className="media-body p-l-6">
               <h2 className="media-heading m-t-15">{user.username}</h2>
-              <button classname="ml-3">Edit Profile</button>
+              <button className="ml-3">Edit Profile</button>
 
               <ul className="header-ul my-3">
                 <li>
@@ -65,7 +63,7 @@ class Profile extends Component {
   }
 }
 Profile.propTypes = {
-  getCurrentProfile: PropTypes.func.isRequired,
+ // getCurrentProfile: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
 };
 
@@ -73,4 +71,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { getCurrentProfile })(Profile);
+export default connect(mapStateToProps)(Profile);
