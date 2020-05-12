@@ -33,9 +33,9 @@ class Navbar extends Component {
           <Link
             className="nav-link js-scroll-trigger"
             onClick={this.toggleMenu}
-            to="/dummylink"
+            to="/profile"
           >
-            Dummy
+            Profile
           </Link>
         </li>
         <li className="nav-item get-started">
