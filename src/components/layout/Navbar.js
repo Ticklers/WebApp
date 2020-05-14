@@ -52,7 +52,7 @@ class Navbar extends Component {
 
     const guestLinks = (
       <ul className="navbar-nav text-uppercase ml-auto">
-        <li className="nav-item get-started">
+        <li className="nav-item design">
           <Link
             className="nav-link js-scroll-trigger"
             to="/login"
