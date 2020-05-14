@@ -23,7 +23,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         memes: action.payload,
-        meme: action.payload,
+
         loading: false,
       };
     /*case GET_POST:

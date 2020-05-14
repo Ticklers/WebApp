@@ -12,16 +12,12 @@ class Posts extends Component {
   }
 
   render() {
-    //console.log(this.props.count);
-    //const { memes, loading } = this.props.meme.memes;
+    // console.log(this.props.count);
+    const { memes } = this.props.memes;
 
-    //let postContent;
+    let postContent;
 
-    //if (memes === null || loading) {
-    //postContent = "";
-    //} else {
-    //postContent = <PostFeed memes={memes} />;
-    //}
+    postContent = <PostFeed memes={memes} />;
 
     return (
       <div className="feed">
@@ -29,7 +25,7 @@ class Posts extends Component {
           <div className="row">
             <div className="col-md-12">
               <PostForm />
-              {/*  {postContent} */}
+              {postContent}
             </div>
           </div>
         </div>
@@ -41,10 +37,12 @@ class Posts extends Component {
 Posts.propTypes = {
   getPosts: PropTypes.func.isRequired,
   meme: PropTypes.object.isRequired,
+  //memes: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   meme: state.meme,
+  // memes: state.memes,
 });
 
 export default connect(mapStateToProps, { getPosts })(Posts);

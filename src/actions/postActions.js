@@ -20,7 +20,6 @@ export const addPost = (postData) => (dispatch) => {
     );
 };
 export const getPosts = () => (dispatch) => {
-  dispatch(setPostLoading());
   const url = "http://agile-anchorage-04188.herokuapp.com/api/memes/all";
   axios
     .get(url)

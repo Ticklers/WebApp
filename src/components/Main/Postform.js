@@ -29,6 +29,7 @@ class Postform extends Component {
       name: user.name,
       username: user.username,
       avatar: user.avatar,
+      user:user.id
     };
     this.props.addPost(newPost);
     this.setState({
