@@ -4372,58 +4372,53 @@ input[type="button"].btn-block {
   color: #fff;
 }
 
-.design {
-  background: #4557c0;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 7px;
-  border-color: #4a5dca;
-  position: relative;
-  /* margin: 1em; */
+.hoverable {
   display: inline-block;
-  padding: 0em 0.5em;
-  transition: all 0.3s ease-in-out;
-  text-align: center;
-  font-weight: bold;
+  backface-visibility: hidden;
+  vertical-align: middle;
+  position: relative;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  /* tranform: translateZ(0); */
+  transition-duration: 0.3s;
+  transition-property: transform;
 }
 
-.design:before,
-.design:after {
-  content: "";
-  display: block;
+.hoverable:before {
   position: absolute;
-  border-color: #000d55;
-  box-sizing: border-box;
-  border-style: solid;
-  width: 1em;
-  height: 1em;
-  transition: all 0.4s ease-in-out;
+  pointer-events: none;
+  z-index: -1;
+  content: "";
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(
+    center,
+    ellipse,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  /* W3C */
+  transition-duration: 0.3s;
+  transition-property: transform, opacity;
 }
 
-.design:before {
-  top: -6px;
-  left: -6px;
-  border-width: 2px 0 0 2px;
-  z-index: 5;
+.hoverable:hover,
+.hoverable:active,
+.hoverable:focus {
+  transform: translateY(-5px);
 }
-
-.design:after {
-  bottom: -6px;
-  right: -6px;
-  border-width: 0 2px 2px 0;
-}
-
-.design:hover:before,
-.design:hover:after {
-  width: calc(100% + 12px);
-  height: calc(100% + 12px);
-  border-color: rgb(0, 0, 0);
-  border-radius: 7px;
-}
-.design:hover {
-  color: #353535;
-  background-color: rgba(0, 110, 255, 0.5);
-  border-color: rgba(183, 0, 255, 0.6);
+.hoverable:hover:before,
+.hoverable:active:before,
+.hoverable:focus:before {
+  opacity: 1;
+  transform: translateY(-5px);
 }
 
 /* .colour {
