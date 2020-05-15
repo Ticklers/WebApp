@@ -13,7 +13,7 @@ class Posts extends Component {
 
   render() {
     // console.log(this.props.count);
-    const { memes } = this.props.memes;
+    const { memes } = this.props.meme.response;
 
     let postContent;
 
