@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-import PrivateRoute from './utils/PrivateRoute';
+import PrivateRoute from "./utils/PrivateRoute";
 
 import "./App.css";
 
@@ -15,11 +15,10 @@ import Landing from "./components/layout/Landing";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import Profile from "./components/Main/Profile"
+import Profile from "./components/Main/Profile";
 import AddPhoto from "./components/Main/AddPhoto";
-import Profile1 from "./components/Main/Profile1"
-
-
+import Profile1 from "./components/Main/Profile1";
+import Posts from "./components/Main/Posts";
 
 // To check if user is logged in already
 
@@ -54,19 +53,18 @@ class App extends Component {
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-          <Switch>
+              <Switch>
                 <PrivateRoute exact path="/profile" component={Profile} />
-                </Switch>
-             <Switch>
-               <PrivateRoute  path="/AddPhoto" component={Profile1} />
-                 </Switch>
-               
-                 
-          
-            
+              </Switch>
+              <Switch>
+                <PrivateRoute path="/AddPhoto" component={Profile1} />
+              </Switch>
 
-    </div>
-                <Footer />
+              <Switch>
+                <PrivateRoute exact path="/feed" component={Posts} />
+              </Switch>
+            </div>
+            <Footer />
           </div>
         </Router>
       </Provider>

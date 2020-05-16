@@ -22,7 +22,7 @@ class Profile extends Component {
                   <img
                     className="media-object"
                     style={{ borderRadius: "50%" }}
-                    src={rick}
+                    src={user.avatar}
                     alt="profile-pic"
                   />
                 </a>
