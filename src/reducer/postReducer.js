@@ -7,7 +7,7 @@ import {
 } from "../actions/types";
 
 const initialState = {
-  memes: [],
+  posts: [],
   meme: {},
   loading: false,
 };
@@ -22,7 +22,7 @@ export default function (state = initialState, action) {
     case GET_POSTS:
       return {
         ...state,
-        memes: action.payload,
+        posts: action.payload,
 
         loading: false,
       };
@@ -36,7 +36,7 @@ export default function (state = initialState, action) {
     case ADD_POST:
       return {
         ...state,
-        memes: [action.payload, ...state.memes],
+        posts: [action.payload, ...state.memes],
       };
 
     /*  case DELETE_POST:

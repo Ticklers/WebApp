@@ -26,7 +26,7 @@ export const getPosts = () => (dispatch) => {
     .then((res) =>
       dispatch({
         type: GET_POSTS,
-        payload: res.data,
+        payload: res.data.response,
       })
     )
     .catch((err) =>

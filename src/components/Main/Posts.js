@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import PostForm from "./Postform";
 import PostFeed from "./PostFeed";
-//import Spinner from "../common/Spinner";
+import Spinner from "../common/Spinner";
 import { getPosts } from "../../actions/postActions";
 
 class Posts extends Component {
@@ -12,10 +12,10 @@ class Posts extends Component {
   }
 
   render() {
-    // console.log(this.props.count);
-    const { memes } = this.props.meme.response;
+    const { memes } = this.props.post.posts;
+    const { loading } = this.props.post;
 
-    let postContent;
+    let postContent = null;
 
     postContent = <PostFeed memes={memes} />;
 
@@ -37,12 +37,10 @@ class Posts extends Component {
 Posts.propTypes = {
   getPosts: PropTypes.func.isRequired,
   meme: PropTypes.object.isRequired,
-  //memes: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  meme: state.meme,
-  // memes: state.memes,
+  post: state.post,
 });
 
 export default connect(mapStateToProps, { getPosts })(Posts);
