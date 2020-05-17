@@ -41,7 +41,8 @@ p {
 }
 
 .photo {
-  width: calc(100% + 4rem);
+  width: 400px;
+  /* width: calc(100% + 4rem); */
   margin: -2rem 0rem 0rem -2rem;
 }
 

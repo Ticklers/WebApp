@@ -1,14 +1,17 @@
 import React from "react";
-import spinner from "./spinner.gif";
+import "./Spinner.css";
 
 export default function Spinner() {
   return (
-    <div>
-      <img
-        src={spinner}
-        style={{ width: "200px", margin: "auto", display: "block" }}
-        alt="Loading"
-      />
+    <div className="container p-5">
+      <div className="sk-chase">
+        <div className="sk-chase-dot"></div>
+        <div className="sk-chase-dot"></div>
+        <div className="sk-chase-dot"></div>
+        <div className="sk-chase-dot"></div>
+        <div className="sk-chase-dot"></div>
+        <div className="sk-chase-dot"></div>
+      </div>
     </div>
   );
 }

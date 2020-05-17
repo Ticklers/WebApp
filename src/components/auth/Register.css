@@ -3,13 +3,9 @@
   --input-padding-y: 0.75rem;
 }
 
-body {
-  background: url("../../img/rickwindows.jpg") no-repeat;
-  position: relative;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-}
+/* body {
+  background: grey;
+} */
 
 .card-signin {
   border: 0;

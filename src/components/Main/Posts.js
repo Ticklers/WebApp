@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import PostForm from "./Postform";
 import PostFeed from "./PostFeed";
-import Spinner from "../common/Spinner";
+// import Spinner from "../common/Spinner";
 import { getPosts } from "../../actions/postActions";
 
 class Posts extends Component {
@@ -13,7 +13,6 @@ class Posts extends Component {
 
   render() {
     const { memes } = this.props.post.posts;
-    const { loading } = this.props.post;
 
     let postContent = null;
 

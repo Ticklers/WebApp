@@ -38,6 +38,15 @@ class Navbar extends Component {
             Profile
           </Link>
         </li>
+        <li className="nav-item hoverable menuclass">
+          <Link
+            className="nav-link js-scroll-trigger"
+            onClick={this.toggleMenu}
+            to="/feed"
+          >
+            Feed
+          </Link>
+        </li>
         <li className="nav-item hoverable">
           <Link
             className="nav-link js-scroll-trigger"
@@ -102,7 +111,7 @@ class Navbar extends Component {
             className={"collapse navbar-collapse " + navMenu}
             id="navbarResponsive"
           >
-            <ul className="navbar-nav text-uppercase ml-3">
+            <ul className="navbar-nav text-uppercase">
               <li className="nav-item hoverable">
                 <Link
                   className="nav-link js-scroll-trigger"

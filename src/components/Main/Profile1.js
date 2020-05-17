@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import PhotoWall from "./PhotoWall";
 import AddPhoto from "./AddPhoto";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import rick from "../../img/rick.png";
 import rickbg from "../../img/rickbg.png";
 import background from "../../img/background2.jpg";
-import PrivateRoute from "../../utils/PrivateRoute";
-import { Provider } from "react-redux";
-import store from "../../store";
+// import PrivateRoute from "../../utils/PrivateRoute";
+// import { Provider } from "react-redux";
+// import store from "../../store";
 
 import "./Profile1.css";
 
@@ -61,7 +61,7 @@ class Profile1 extends Component {
     console.log(postSubmitted.description);
   }
 
-  componentDidMount() {}
+  // componentDidMount() {}
 
   componentDidUpdate(prevProps, prevState) {
     console.log(prevState.posts);
@@ -88,12 +88,12 @@ class Profile1 extends Component {
 
         <Route
           path="/AddPhoto"
-          render={({history}) => (
+          render={({ history }) => (
             <AddPhoto
               onAddPhoto={(addedPost) => {
                 this.addPhoto(addedPost);
                 console.log(this.state.posts);
-                history.push('/profile')
+                history.push("/profile");
               }}
             />
           )}

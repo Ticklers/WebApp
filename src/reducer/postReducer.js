@@ -26,24 +26,24 @@ export default function (state = initialState, action) {
 
         loading: false,
       };
-    /*case GET_POST:
-        return {
-          ...state,
-          post: action.payload,
-          loading: false
-        };
-        */
+    case GET_POST:
+      return {
+        ...state,
+        post: action.payload,
+        loading: false,
+      };
+
     case ADD_POST:
       return {
         ...state,
         posts: [action.payload, ...state.memes],
       };
 
-    /*  case DELETE_POST:
-        return {
-          ...state,
-          posts: state.posts.filter(post => post._id !== action.payload)
-        };*/
+    case DELETE_POST:
+      return {
+        ...state,
+        posts: state.posts.filter((post) => post._id !== action.payload),
+      };
     default:
       return state;
   }
