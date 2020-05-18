@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
-import { Link } from "react-router-dom";
+
+import "./Profile1.css";
 
 class PostItem extends Component {
   render() {
-    const { meme, auth } = this.props;
+    const { meme } = this.props;
     return (
       <figure className="figure">
         <img className="photo" src={meme.mediaLink} alt={meme.caption} />

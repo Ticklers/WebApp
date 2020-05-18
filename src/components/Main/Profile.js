@@ -2,11 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getCurrentProfile } from "../../actions/profileActions";
 
-import Profile1 from "./Profile1";
 import "./Profile.css";
-import rick from "../../img/rick.png";
 
 class Profile extends Component {
   render() {
@@ -55,9 +52,7 @@ class Profile extends Component {
             </div>
           </div>
         </div>
-        <div>
-          <Profile1 />
-        </div>
+        <div></div>
       </div>
     );
   }

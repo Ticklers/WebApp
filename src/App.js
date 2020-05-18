@@ -16,9 +16,9 @@ import ScrollToTop from "./components/layout/ScrollToTop";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Profile from "./components/Main/Profile";
-import AddPhoto from "./components/Main/AddPhoto";
-import Profile1 from "./components/Main/Profile1";
 import Posts from "./components/Main/Posts";
+import Postform from "./components/Main/Postform";
+import "./components/Main/Profile1.css";
 
 // To check if user is logged in already
 
@@ -57,7 +57,7 @@ class App extends Component {
                 <PrivateRoute exact path="/profile" component={Profile} />
               </Switch>
               <Switch>
-                <PrivateRoute path="/AddPhoto" component={Profile1} />
+                <PrivateRoute path="/AddPost" component={Postform} />
               </Switch>
 
               <Switch>

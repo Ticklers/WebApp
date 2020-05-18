@@ -2,15 +2,17 @@ import axios from "axios";
 
 import { ADD_POST, GET_ERRORS, GET_POSTS, POST_LOADING } from "./types";
 
-export const addPost = (postData) => (dispatch) => {
+export const addPost = (postData, history) => (dispatch) => {
   const url = "https://agile-anchorage-04188.herokuapp.com/api/memes/post";
   axios
     .post(url, postData)
-    .then((res) =>
-      dispatch({
-        type: ADD_POST,
-        payload: res.data,
-      })
+    .then(
+      (res) =>
+        dispatch({
+          type: ADD_POST,
+          payload: res.data,
+        }),
+      history.push("/profile")
     )
     .catch((err) =>
       dispatch({

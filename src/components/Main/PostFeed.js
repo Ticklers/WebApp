@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import PostItem from "./PostItem";
 import Spinner from "../common/Spinner";
+import "./Profile1.css";
 
 class PostFeed extends Component {
   render() {
