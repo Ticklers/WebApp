@@ -8,6 +8,8 @@ import CommentForm from "./Post/CommentForm";
 
 import "./Post.css";
 
+import "./Profile1.css";
+
 class PostItem extends Component {
   onLike(id, arr) {
     this.props.addLike(id);

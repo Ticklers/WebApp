@@ -42,6 +42,15 @@ class Navbar extends Component {
           <Link
             className="nav-link js-scroll-trigger"
             onClick={this.toggleMenu}
+            to="/AddPost"
+          >
+            Create post
+          </Link>
+        </li>
+        <li className="nav-item hoverable menuclass">
+          <Link
+            className="nav-link js-scroll-trigger"
+            onClick={this.toggleMenu}
             to="/feed"
           >
             Feed
@@ -120,15 +129,6 @@ class Navbar extends Component {
                 >
                   Home
                 </Link>
-              </li>
-              <li className="nav-item hoverable">
-                <a
-                  className="nav-link js-scroll-trigger"
-                  href="#about"
-                  onClick={this.toggleMenu}
-                >
-                  About
-                </a>
               </li>
             </ul>
             {isAuthenticated ? authLinks : guestLinks}

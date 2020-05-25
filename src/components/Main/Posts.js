@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import PostForm from "./Postform";
+
 import PostFeed from "./PostFeed";
 // import Spinner from "../common/Spinner";
 import { getPosts } from "../../actions/postActions";
+import "./Profile1.css";
 
 class Posts extends Component {
   componentDidMount() {
@@ -22,10 +23,7 @@ class Posts extends Component {
       <div className="feed">
         <div className="container">
           <div className="row">
-            <div className="col-md-12">
-              <PostForm />
-              {postContent}
-            </div>
+            <div className="col-md-12">{postContent}</div>
           </div>
         </div>
       </div>
@@ -35,7 +33,7 @@ class Posts extends Component {
 
 Posts.propTypes = {
   getPosts: PropTypes.func.isRequired,
-  meme: PropTypes.object.isRequired,
+  post: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
