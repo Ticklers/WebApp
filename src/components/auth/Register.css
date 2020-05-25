@@ -6,6 +6,7 @@
 body {
   background: url("../../img/rickwindows.jpg") no-repeat;
   position: relative;
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }

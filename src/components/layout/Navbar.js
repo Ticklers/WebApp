@@ -38,7 +38,25 @@ class Navbar extends Component {
             Profile
           </Link>
         </li>
-        <li className="nav-item hoverable">
+        <li className="nav-item menuclass">
+          <Link
+            className="nav-link js-scroll-trigger"
+            onClick={this.toggleMenu}
+            to="/AddPost"
+          >
+            Create post
+          </Link>
+        </li>
+        <li className="nav-item menuclass">
+          <Link
+            className="nav-link js-scroll-trigger"
+            onClick={this.toggleMenu}
+            to="/feed"
+          >
+            Trending
+          </Link>
+        </li>
+        <li className="nav-item get-started">
           <Link
             className="nav-link js-scroll-trigger"
             to="/login"
