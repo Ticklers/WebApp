@@ -16,9 +16,10 @@ import ScrollToTop from "./components/layout/ScrollToTop";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Profile from "./components/Main/Profile";
-import AddPhoto from "./components/Main/AddPhoto";
+// import AddPhoto from "./components/Main/AddPhoto";
 import Profile1 from "./components/Main/Profile1";
 import Posts from "./components/Main/Posts";
+import Post from "./components/Main/Post/Post";
 
 // To check if user is logged in already
 
@@ -62,6 +63,9 @@ class App extends Component {
 
               <Switch>
                 <PrivateRoute exact path="/feed" component={Posts} />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/post/:id" component={Post} />
               </Switch>
             </div>
             <Footer />

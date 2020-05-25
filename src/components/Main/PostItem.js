@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addLike, removeLike } from "../../actions/postActions";
 import classnames from "classnames";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import CommentForm from "./Post/CommentForm";
 
 import "./Post.css";
 
@@ -26,7 +27,7 @@ class PostItem extends Component {
   }
 
   render() {
-    const { meme, auth } = this.props;
+    const { meme } = this.props;
     return (
       <div className="container">
         <div className="row">
@@ -37,41 +38,35 @@ class PostItem extends Component {
             >
               <div className="card-body">
                 <div className="profile row">
-                  <img
-                    src={auth.user.avatar}
-                    className="profile-img"
-                    alt="Avatar"
-                  />
-                  <p className="pl-2">{auth.user.name}</p>
+                  <img src={meme.avatar} className="profile-img" alt="Avatar" />
+                  <p className="pl-2">{meme.name}</p>
                 </div>
-                <img
-                  className="image mx-auto d-flex justify-content-center"
-                  src={meme.mediaLink}
-                  alt={meme.caption}
-                />
+                <Link to={`/post/${meme._id}`}>
+                  <img
+                    className="image mx-auto d-flex justify-content-center"
+                    src={meme.mediaLink}
+                    alt={meme.caption}
+                  />
+                </Link>
                 <hr />
                 <p className="pl-2">{meme.caption}</p>
-                <button
+                <i
                   onClick={
                     this.findUserLike(meme.likes)
                       ? this.onUnlike.bind(this, meme._id)
                       : this.onLike.bind(this, meme._id)
                   }
-                  type="button"
-                  className="btn btn-dark mx-2"
-                  style={{ boxShadow: "none" }}
-                >
-                  <i
-                    className={classnames("fas fa-thumbs-up", {
-                      "text-danger": this.findUserLike(meme.likes),
-                    })}
-                  ></i>
-                </button>
-                <span className="pl-2">
+                  className={classnames("far fa-heart p-2 like", {
+                    "text-danger fas": this.findUserLike(meme.likes),
+                  })}
+                ></i>
+                <i className="far fa-comment p-2"></i>
+                <div className="pl-2">
                   <small>
                     {meme.likes.length} Like{meme.likes.length > 1 ? "s" : ""}
                   </small>
-                </span>
+                </div>
+                <CommentForm postId={meme._id} />
               </div>
             </div>
           </div>

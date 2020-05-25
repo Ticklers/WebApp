@@ -29,7 +29,7 @@ export default function (state = initialState, action) {
     case GET_POST:
       return {
         ...state,
-        post: action.payload,
+        meme: action.payload,
         loading: false,
       };
 

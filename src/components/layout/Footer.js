@@ -10,13 +10,13 @@ export default function Footer() {
           </div>
           <div className="col-lg-4 my-3 my-lg-0">
             <a className="btn btn-dark btn-social mx-2" href="#!">
-              <i className="fab fa-twitter"></i>t
+              <i className="fab fa-twitter"></i>
             </a>
             <a className="btn btn-dark btn-social mx-2" href="#!">
-              <i className="fab fa-facebook-f"></i>f
+              <i className="fab fa-facebook-f"></i>
             </a>
             <a className="btn btn-dark btn-social mx-2" href="#!">
-              <i className="fab fa-linkedin-in"></i>in
+              <i className="fab fa-linkedin-in"></i>
             </a>
           </div>
           <div className="col-lg-4 text-lg-right">

@@ -1,6 +1,12 @@
 import axios from "axios";
 
-import { ADD_POST, GET_ERRORS, GET_POSTS, POST_LOADING } from "./types";
+import {
+  ADD_POST,
+  GET_ERRORS,
+  GET_POSTS,
+  GET_POST,
+  POST_LOADING,
+} from "./types";
 
 export const addPost = (postData) => (dispatch) => {
   const url = "https://agile-anchorage-04188.herokuapp.com/api/memes/post";
@@ -32,6 +38,26 @@ export const getPosts = () => (dispatch) => {
     .catch((err) =>
       dispatch({
         type: GET_POSTS,
+        payload: null,
+      })
+    );
+};
+
+// Get a single post
+export const getPost = (id) => (dispatch) => {
+  const url = `http://agile-anchorage-04188.herokuapp.com/api/memes/findmeme/${id}`;
+  dispatch(setPostLoading());
+  axios
+    .get(url)
+    .then((res) =>
+      dispatch({
+        type: GET_POST,
+        payload: res.data,
+      })
+    )
+    .catch((err) =>
+      dispatch({
+        type: GET_POST,
         payload: null,
       })
     );
@@ -83,25 +109,6 @@ export const addComment = (id, commentData) => (dispatch) => {
       })
     );
 };
-
-// Delete Comment
-// export const deleteComment = (id, commentId) => (dispatch) => {
-//   const url = `http://agile-anchorage-04188.herokuapp.com/api/addons/comment/${id}`;
-//   axios
-//     .delete(url)
-//     .then((res) =>
-//       dispatch({
-//         type: GET_POSTS,
-//         payload: res.data,
-//       })
-//     )
-//     .catch((err) =>
-//       dispatch({
-//         type: GET_ERRORS,
-//         payload: err.response.data,
-//       })
-//     );
-// };
 
 export const setPostLoading = () => {
   return {
