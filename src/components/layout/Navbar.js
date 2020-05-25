@@ -29,7 +29,7 @@ class Navbar extends Component {
 
     const authLinks = (
       <ul className="navbar-nav left text-uppercase ml-auto">
-        <li className="nav-item menuclass">
+        <li className="nav-item hoverable menuclass">
           <Link
             className="nav-link js-scroll-trigger"
             onClick={this.toggleMenu}
@@ -70,7 +70,7 @@ class Navbar extends Component {
 
     const guestLinks = (
       <ul className="navbar-nav text-uppercase ml-auto">
-        <li className="nav-item get-started">
+        <li className="nav-item hoverable">
           <Link
             className="nav-link js-scroll-trigger"
             to="/login"
@@ -79,7 +79,7 @@ class Navbar extends Component {
             Log In
           </Link>
         </li>
-        <li className="nav-item get-started">
+        <li className="nav-item hoverable">
           <Link
             className="nav-link js-scroll-trigger"
             to="/register"
@@ -98,7 +98,7 @@ class Navbar extends Component {
       >
         <div className="container">
           <Link
-            className="navbar-brand js-scroll-trigger"
+            className="navbar-brand design js-scroll-trigger"
             onClick={this.toggleMenu}
             to="/"
           >
@@ -121,7 +121,7 @@ class Navbar extends Component {
             id="navbarResponsive"
           >
             <ul className="navbar-nav text-uppercase ml-3">
-              <li className="nav-item">
+              <li className="nav-item hoverable">
                 <Link
                   className="nav-link js-scroll-trigger"
                   to="/"
@@ -130,7 +130,7 @@ class Navbar extends Component {
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item hoverable">
                 <a
                   className="nav-link js-scroll-trigger"
                   href="#about"
